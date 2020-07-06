@@ -1,0 +1,69 @@
+/***** RESET *****/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+/***** UTILS *****/
+.u-center {
+  width: 160rem;
+}
+
+/***** HEADINGS & PARAGRAPHS *****/
+.heading-primary {
+  font-size: 4rem;
+  font-family: MuseoModerno, cursive;
+}
+
+.paragraph-header {
+  font-size: 2.5rem;
+}
+
+.paragraph-header span {
+  font-weight: 700;
+}
+
+/***** HEADER *****/
+.section-header {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 4rem
+
+}
+
+/***** FILTERS *****/
+.section-filters {
+  background-color: palevioletred;
+  display: flex;
+  justify-content: center;
+}
+
+.filters-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 6rem;
+}
+
+.section-filters input,
+.section-filters select {
+  width: 18%;
+  height: 4rem;
+  padding: 1rem 1rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1.6rem;
+  font-weight: 400;
+}
