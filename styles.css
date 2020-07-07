@@ -71,7 +71,7 @@ body {
 .section-filters input,
 .section-filters select {
   width: 18%;
-  height: 4rem;
+  height: 4.5rem;
   padding: 1rem 1rem;
   border: 1px solid #b0b0b0;
   border-radius: 5px;
@@ -83,20 +83,28 @@ body {
 
 /***** SECTION CARDS *****/
 .section-cards {
-  width: 160rem;
+  max-width: 160rem;
   margin: 0 auto;
   padding: 3rem 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
 }
 
 /***** CARD *****/
 .card {
   border: 1px solid #b0b0b0;
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
+  width: 35rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
 }
 
 .card__img {
-  width: 35rem;
+  width: 100%;
+  height: auto;
 }
 
 .card__data {
@@ -105,7 +113,7 @@ body {
 .card__btn {
   border: none;
   background-color: blueviolet;
-  padding: 1rem 2rem;
+  padding: 1rem 0;
   color: #fff;
   font-weight: 700;
   font-size: 1.4rem;

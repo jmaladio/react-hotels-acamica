@@ -3,6 +3,7 @@
 // Utilizamos fechas dinámicas para que la aplicación siempre muestre un rango de días entre la fecha actual y el futuro.
 
 const today = new Date()
+console.log(today.toISOString())
 const hotelsData = [
   {
     slug: 'la-bamba-de-areco',
