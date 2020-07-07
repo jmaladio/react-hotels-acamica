@@ -15,14 +15,17 @@ body {
 }
 
 /***** UTILS *****/
-.u-center {
-  width: 160rem;
-}
+
 
 /***** HEADINGS & PARAGRAPHS *****/
 .heading-primary {
   font-size: 4rem;
   font-family: MuseoModerno, cursive;
+}
+
+.heading-secondary {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .paragraph-header {
@@ -33,27 +36,36 @@ body {
   font-weight: 700;
 }
 
-/***** HEADER *****/
-.section-header {
-  background-color: pink;
-  display: flex;
-  justify-content: center;
-  padding: 2rem 4rem
-
+.paragraph-card {
+  font-size: 1.4rem;
 }
 
-/***** FILTERS *****/
-.section-filters {
-  background-color: palevioletred;
+/***** HEADER *****/
+.section-header {
   display: flex;
   justify-content: center;
+}
+
+.header__container {
+  width: 160rem;
+  padding: 3rem 4rem
+}
+
+/***** SECTION FILTERS *****/
+.section-filters {
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
 }
 
 .filters-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 6rem;
+  padding: 2rem 6rem;
+  width: 160rem;
+  background-color: blueviolet;
+  border-radius: 13px;
 }
 
 .section-filters input,
@@ -61,9 +73,47 @@ body {
   width: 18%;
   height: 4rem;
   padding: 1rem 1rem;
-  border: 1px solid black;
+  border: 1px solid #b0b0b0;
   border-radius: 5px;
   font-family: inherit;
   font-size: 1.6rem;
   font-weight: 400;
 }
+
+
+/***** SECTION CARDS *****/
+.section-cards {
+  width: 160rem;
+  margin: 0 auto;
+  padding: 3rem 4rem;
+}
+
+/***** CARD *****/
+.card {
+  border: 1px solid #b0b0b0;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.card__img {
+  width: 35rem;
+}
+
+.card__data {
+  padding: 2rem 1.5rem;
+}
+.card__btn {
+  border: none;
+  background-color: blueviolet;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+
+
+
+
+
