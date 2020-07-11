@@ -33,6 +33,7 @@ class App extends React.Component {
   handleDateChange(e) {
     if (e.target.value) {
       const date = e.target.valueAsDate;
+      console.log('state', e.target.valueAsDate)
       this.setState({[e.target.name]: {
         active: true,
         day: date.getUTCDay(),
@@ -41,7 +42,7 @@ class App extends React.Component {
         year: date.getUTCFullYear(),
         value: e.target.value
         }
-      })
+      }/* , () => console.log("input date", this.state.start) */)
     } else {
       this.setState({[e.target.name]: {
         active: false,
@@ -53,6 +54,8 @@ class App extends React.Component {
         }
       })
     }
+
+    
   }
 
   handleCountryChange(e) {
@@ -60,11 +63,21 @@ class App extends React.Component {
   }
 
   handlePriceChange(e) {
-    this.setState( { price: e.target.value } )
+    this.setState( { price: Number(e.target.value) } )
   }
 
   handleSizeChange(e) {
     this.setState( { size: e.target.value } )
+  }
+
+  componentDidMount() {
+    const dateTimeToZero = (ms) => {
+      const workingDate = new Date(ms);
+      return workingDate.setHours(0,0,0,0)
+    }
+    const today = new Date();
+    // console.log(today);
+    // console.log(new Date(dateTimeToZero(today)))
   }
 
   render() {

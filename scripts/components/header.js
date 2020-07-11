@@ -10,7 +10,7 @@ const Header = ({checkIn, checkOut}) => {
     return months[code];
   }
 
-  const dateCheckIn = new Date(checkIn.year, checkIn.month, checkIn.date, 23, 59, 59)
+  const dateCheckIn = new Date(checkIn.year, checkIn.month, checkIn.date, 0, 0, 0)
   const dateCheckOut = new Date(checkOut.year, checkOut.month, checkOut.date, 0, 0, 0)
 
   return (
@@ -21,7 +21,12 @@ const Header = ({checkIn, checkOut}) => {
           {checkIn.active ? 
             <React.Fragment>
               {'Desde el '}
-              <HeaderDate day={getHeaderDay(checkIn.day)} date={checkIn.date} month={getHeaderMonth(checkIn.month)} year={checkIn.year}/> 
+              <HeaderDate 
+                day={getHeaderDay(checkIn.day)} 
+                date={checkIn.date} 
+                month={getHeaderMonth(checkIn.month)} 
+                year={checkIn.year}
+              /> 
             </React.Fragment> :
             <React.Fragment>
               {checkOut.active ? '' : 'Elige tu próximo destino'}
@@ -30,7 +35,12 @@ const Header = ({checkIn, checkOut}) => {
           {checkOut.active && dateCheckOut >= dateCheckIn ?
             <React.Fragment>
               {checkIn.active ? ' hasta el ' : 'Hasta el '}
-              <HeaderDate day={getHeaderDay(checkOut.day)} date={checkOut.date} month={getHeaderMonth(checkOut.month)} year={checkOut.year}/> 
+              <HeaderDate 
+                day={getHeaderDay(checkOut.day)}
+                date={checkOut.date} 
+                month={getHeaderMonth(checkOut.month)} 
+                year={checkOut.year}
+              /> 
             </React.Fragment> :
             ''
           }

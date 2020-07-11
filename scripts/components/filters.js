@@ -7,11 +7,36 @@ const Filters = ({ onDateChange, onCountryChange, onPriceChange, onSizeChange, a
   const todayDate = new Date();
   const limitCheckOutDate = new Date(limitCheckOut)
 
+  if (activeCheckIn) {
+    // console.log(limitCheckOutDate)
+    // console.log(limitCheckOutDate.toISOString())
+  }
+
+  const dateStringify = (date) => {
+    const numDate = date.getDate();
+    const numMonth = date.getMonth() + 1;
+    const numYear = date.getFullYear();
+
+    return `${numYear}-${numMonth < 10 ? '0' + numMonth : numMonth}-${numDate < 10 ? '0' + numDate : numDate}`
+  }
+
   return (
     <div className="section-filters">
       <div className="filters-container">
-        <input type="date" id="start" name="start" min={todayDate.toISOString().slice(0,10)} onChange={onDateChange}></input>
-        <input type="date" id="end" name="end" min={activeCheckIn ? limitCheckOutDate.toISOString().slice(0,10) : todayDate.toISOString().slice(0,10)} onChange={onDateChange}></input>
+        <input 
+          type="date" 
+          id="start" 
+          name="start" 
+          min={dateStringify(todayDate)} 
+          onChange={onDateChange}
+        ></input>
+        <input 
+          type="date" 
+          id="end" 
+          name="end" 
+          min={activeCheckIn ? limitCheckOutDate.toISOString().slice(0,10) : dateStringify(todayDate)} 
+          onChange={onDateChange}
+        ></input>
         <select onChange={onCountryChange}>
           <option value="">Todos los países</option>
           {
