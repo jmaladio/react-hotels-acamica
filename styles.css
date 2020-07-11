@@ -120,9 +120,59 @@ body {
   cursor: pointer;
 }
 
-.data__rooms {
+.card__data--line-1,
+.card__data--line-2 {
   display: flex;
-  background-color: #b0b0b0;
+  background-color: transparent;
+  height: 4rem;
+  margin: 1rem 0;
+}
+
+.card__place,
+.card__rooms {
+  display:flex;
+}
+
+.card__place--icon,
+.card__rooms--icon {
+width: 4rem;
+background-color: blueviolet;
+font-size: 2rem;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+border-top-left-radius: 8px;
+border-bottom-left-radius: 8px;
+}
+
+.card__place--text,
+.card__rooms--text {
+  padding: 0 1.5rem;
+  display: flex;
+  justify-self: start;
+  align-items: center;
+  font-size: 1.6rem;
+  background-color: #eee;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.card__price {
+  display: flex;
+  background-color: blueviolet;
+  height: 4rem;
+  padding: 0 1.5rem;
+  border-radius: 8px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: #fff;
+  margin-left: 2rem;
+}
+
+.dollar-disable {
+  color: rgba(238, 238, 238, 0.4);
 }
 
 
