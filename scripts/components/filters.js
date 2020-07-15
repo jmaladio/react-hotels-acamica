@@ -1,17 +1,17 @@
-const Filters = ({ onDateChange, onCountryChange, onPriceChange, onSizeChange, activeCheckIn, limitCheckOut }) => {
+const Filters = (props) => {
+  const { onDateChange, onCountryChange, onPriceChange, onSizeChange, activeCheckIn, limitCheckOut } = props;
 
+  // Generates the list of countries
   const listCountries = hotelsData.map(el => el.country).filter((el, index, arr) => {
     return arr.indexOf(el) === index;
   }).sort();
 
+  // todayDate is used to set the default min value for the check-in and check-out inputs
+  // limitCheckOutDate is used to set the min value for the check-out input in case the check-in input is active
   const todayDate = new Date();
   const limitCheckOutDate = new Date(limitCheckOut)
 
-  if (activeCheckIn) {
-    // console.log(limitCheckOutDate)
-    // console.log(limitCheckOutDate.toISOString())
-  }
-
+  // auxiliar fn, accepts a Date object and returns a string with the format YYYY-MM-DD
   const dateStringify = (date) => {
     const numDate = date.getDate();
     const numMonth = date.getMonth() + 1;

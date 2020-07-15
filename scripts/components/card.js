@@ -1,13 +1,14 @@
 const Card = ({ name, photo, description, availableFrom, availableTo, country, city, price, rooms }) => {
 
-  // const dateStart = new Date(availableFrom);
-  // const dateEnd = new Date(availableTo);
+
 
   const cityPlusCountry = `${city}, ${country}`;
 
   const priceIcons = [1,2,3,4].map(el => {
-    return el <= price ? <i key={el} className="fas fa-dollar-sign"></i> : <i key={el} className="fas fa-dollar-sign dollar-disable"></i>
-  })
+    return (
+      el <= price ? <i key={el} className="fas fa-dollar-sign"></i> : <i key={el} className="fas fa-dollar-sign dollar-disable"></i>
+      )
+  });
 
   return (
     <div className="card">

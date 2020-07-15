@@ -1,5 +1,7 @@
-const Header = ({checkIn, checkOut}) => {
+const Header = (props) => {
   
+  const {checkIn, checkOut} = props;
+
   const getHeaderDay = (code) => {
     const days = ["domingo", "lunes", "martes", "miércoles", "jueves", "viernes", "sábado"]
     return days[code];
@@ -10,14 +12,15 @@ const Header = ({checkIn, checkOut}) => {
     return months[code];
   }
 
-  const dateCheckIn = new Date(checkIn.year, checkIn.month, checkIn.date, 0, 0, 0)
-  const dateCheckOut = new Date(checkOut.year, checkOut.month, checkOut.date, 0, 0, 0)
+  const dateCheckIn = new Date(checkIn.year, checkIn.month, checkIn.date, 0, 0, 0);
+  const dateCheckOut = new Date(checkOut.year, checkOut.month, checkOut.date, 0, 0, 0);
 
   return (
     <header className="section-header">
       <div className="header__container">
         <h1 className="heading-primary">Hoteles</h1>
         <p className="paragraph-header">
+          {/* check-in span */}
           {checkIn.active ? 
             <React.Fragment>
               {'Desde el '}
@@ -32,6 +35,7 @@ const Header = ({checkIn, checkOut}) => {
               {checkOut.active ? '' : 'Elige tu próximo destino'}
             </React.Fragment>
           }
+          {/* check-in span */}
           {checkOut.active && dateCheckOut >= dateCheckIn ?
             <React.Fragment>
               {checkIn.active ? ' hasta el ' : 'Hasta el '}
