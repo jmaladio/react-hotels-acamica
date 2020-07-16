@@ -1,4 +1,4 @@
-const Main = (props) => {
+const Main = props => {
 
   const { checkIn, checkOut, country, price, size } = props;
 
@@ -45,8 +45,16 @@ const Main = (props) => {
       )
     ) : arrPerPrice
 
+
   return (
     <div className="section-cards">
+      <ErrorMessage 
+        arrPerCheckIn={arrPerCheckIn}
+        arrPerCheckOut={arrPerCheckOut}
+        arrPerCountry={arrPerCountry}
+        arrPerPrice={arrPerPrice}
+        arrPerSize={arrPerSize}  
+      />
       {
         arrPerSize.map((hotel) => (
           <Card 
@@ -64,5 +72,34 @@ const Main = (props) => {
         )
       }
     </div>
+  )
+}
+
+const ErrorMessage = props => {
+
+  const { arrPerCheckIn, arrPerCheckOut, arrPerCountry, arrPerPrice, arrPerSize } = props;
+
+  const findError = () => {
+    if (!arrPerCheckIn.length) {
+      return 'No hay hoteles disponibles para la fecha de entrada elegida';
+    } else if (!arrPerCheckOut.length) {
+      return 'No hay hoteles disponibles para la fecha de salida elegida';
+    } else if (!arrPerCountry.length) {
+      return 'No hay hoteles disponibles para el país elegido';
+    } else if (!arrPerPrice.length) {
+      return 'No hay hoteles disponibles para el rango de precios elegido';
+    } else if (!arrPerSize.length) {
+      return 'No hay hoteles disponibles para el tamaño de hotel elegido';
+    } else {
+      return '';
+    }
+  }
+
+  return (
+    <React.Fragment >
+      {
+        findError() ? <p className="paragraph-main">{findError()}</p> : ''
+      }
+    </React.Fragment>
   )
 }

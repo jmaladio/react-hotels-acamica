@@ -36,6 +36,11 @@ body {
   font-weight: 700;
 }
 
+.paragraph-main {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
 .paragraph-card {
   font-size: 1.4rem;
 }
@@ -175,6 +180,35 @@ border-bottom-left-radius: 8px;
   color: rgba(238, 238, 238, 0.4);
 }
 
+@media (max-width: 1200px) {
 
+  .filters-container {
+    flex-wrap: wrap;
+  }
+
+  .filters-container input {
+    width: 49%;
+    margin-bottom: 1rem;
+  }
+  .filters-container select {
+    width: 33%;
+  }
+}
+
+@media (max-width: 720px) {
+  .filters-container {
+    flex-direction: column;
+  }
+
+  .filters-container input,
+  .filters-container select {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .heading-primary {
+    text-align: center;
+  }
+}
 
 
