@@ -22,41 +22,66 @@ const Filters = (props) => {
 
   return (
     <div className="section-filters">
-      <div className="filters-container">
-        <input 
-          type="date" 
-          id="start" 
-          name="start" 
-          min={dateStringify(todayDate)} 
-          onChange={onDateChange}
-        ></input>
-        <input 
-          type="date" 
-          id="end" 
-          name="end" 
-          min={activeCheckIn ? limitCheckOutDate.toISOString().slice(0,10) : dateStringify(todayDate)} 
-          onChange={onDateChange}
-        ></input>
-        <select onChange={onCountryChange}>
-          <option value="">Todos los países</option>
-          {
-            listCountries.map((el, index) => <option key={`${index}-${el.slice(0,3).toLowerCase()}`} value={el}>{el}</option>)
-          }
-        </select>
-        <select onChange={onPriceChange}>
-          <option value="">Cualquier precio</option>
-          <option value="1">$</option>
-          <option value="2">$$</option>
-          <option value="3">$$$</option>
-          <option value="4">$$$$</option>
-        </select>
-        <select onChange={onSizeChange}>
-          <option value="">Cualquier tamaño</option>
-          <option value="small">Hotel pequeño</option>
-          <option value="medium">Hotel mediano</option>
-          <option value="large">Hotel grande</option>
-        </select>
-      </div>
+      <form className="filters">
+        <div className="filters__checkin">
+          <label for="start" className="filters__icon">
+            <i class="fas fa-sign-in-alt"></i>
+          </label>
+          <input 
+            type="date" 
+            id="start" 
+            name="start" 
+            min={dateStringify(todayDate)} 
+            onChange={onDateChange}
+          ></input>
+        </div>
+        <div className="filters__checkout">
+          <label for="end" className="filters__icon">
+            <i class="fas fa-sign-out-alt"></i>
+          </label> 
+          <input 
+            type="date" 
+            id="end" 
+            name="end" 
+            min={activeCheckIn ? limitCheckOutDate.toISOString().slice(0,10) : dateStringify(todayDate)} 
+            onChange={onDateChange}
+          ></input>
+        </div>
+        <div className="filters__selects">
+          <label for="" className="filters__icon">
+            <i class="fas fa-globe"></i>
+          </label>
+          <select onChange={onCountryChange}>
+            <option value="">Todos los países</option>
+            {
+              listCountries.map((el, index) => <option key={`${index}-${el.slice(0,3).toLowerCase()}`} value={el}>{el}</option>)
+            }
+          </select>
+        </div>
+        <div className="filters__selects">
+          <label for="" className="filters__icon">
+            <i class="fas fa-dollar-sign"></i>
+          </label>
+          <select onChange={onPriceChange}>
+            <option value="">Cualquier precio</option>
+            <option value="1">$</option>
+            <option value="2">$$</option>
+            <option value="3">$$$</option>
+            <option value="4">$$$$</option>
+          </select>
+        </div>
+        <div className="filters__selects">
+          <label for="" className="filters__icon">
+            <i class="fas fa-bed"></i>
+          </label>
+          <select onChange={onSizeChange}>
+            <option value="">Cualquier tamaño</option>
+            <option value="small">Hotel pequeño</option>
+            <option value="medium">Hotel mediano</option>
+            <option value="large">Hotel grande</option>
+          </select>
+        </div>
+      </form>
     </div>
   )
 }
