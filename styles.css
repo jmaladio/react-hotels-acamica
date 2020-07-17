@@ -91,8 +91,8 @@ body {
 .filters__checkout input,
 .filters__selects select {
   height: 100%;
-  width: 80%;
-  text-align: left;
+  width: 100%;
+  padding-left: 4rem;
   font-family: inherit;
   font-size: 1.6rem;
   font-weight: 400;
@@ -100,7 +100,8 @@ body {
 }
 
 .filters__checkin input:focus,
-.filters__checkout input:focus {
+.filters__checkout input:focus,
+.filters__selects select {
   outline: none;
 }
 
@@ -257,9 +258,4 @@ border-bottom-left-radius: 8px;
   .filters__checkout {
     flex: 0 1 100%;
   }
-}
-
-input[type="date"]:not(.has-value):before{
-  color: lightgray;
-  content: attr(placeholder);
 }

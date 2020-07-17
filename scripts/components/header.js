@@ -20,7 +20,7 @@ const Header = (props) => {
       <div className="header__container">
         <h1 className="heading-primary">Hoteles</h1>
         <p className="paragraph-header">
-          {/* check-in span */}
+          {/* check-in message */}
           {checkIn.active ? 
             <React.Fragment>
               {'Desde el '}
@@ -35,7 +35,7 @@ const Header = (props) => {
               {checkOut.active ? '' : 'Elige tu próximo destino'}
             </React.Fragment>
           }
-          {/* check-in span */}
+          {/* check-out message */}
           {checkOut.active && dateCheckOut >= dateCheckIn ?
             <React.Fragment>
               {checkIn.active ? ' hasta el ' : 'Hasta el '}

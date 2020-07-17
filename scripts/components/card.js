@@ -1,6 +1,6 @@
-const Card = ({ name, photo, description, availableFrom, availableTo, country, city, price, rooms }) => {
+const Card = props => {
 
-
+  const { name, photo, description, country, city, price, rooms } = props;
 
   const cityPlusCountry = `${city}, ${country}`;
 
@@ -29,7 +29,6 @@ const Card = ({ name, photo, description, availableFrom, availableTo, country, c
           </div>
         </div>
 
-
         <div className="card__data--line-2">
           <div className="card__rooms">
             <div className="card__rooms--icon">
@@ -43,14 +42,7 @@ const Card = ({ name, photo, description, availableFrom, availableTo, country, c
           {priceIcons}
         </div>
         </div>
-        
-        
-        {/* <p>From: {dateStart.toISOString()}</p>
-        <p>To: {dateEnd.toISOString()}</p>
-        <p>Country: {country}</p>
-        <p>City: {city}</p>
-        <p>Price range ID: {price}</p>
-        <p>Rooms: {rooms}</p> */}
+
       </div>
       <button className="card__btn">Reservar</button>
     </div>

@@ -24,8 +24,8 @@ const Filters = (props) => {
     <div className="section-filters">
       <form className="filters">
         <div className="filters__checkin">
-          <label for="start" className="filters__icon">
-            <i class="fas fa-sign-in-alt"></i>
+          <label htmlFor="start" className="filters__icon">
+            <i className="fas fa-sign-in-alt"></i>
           </label>
           <input 
             type="date" 
@@ -36,8 +36,8 @@ const Filters = (props) => {
           ></input>
         </div>
         <div className="filters__checkout">
-          <label for="end" className="filters__icon">
-            <i class="fas fa-sign-out-alt"></i>
+          <label htmlFor="end" className="filters__icon">
+            <i className="fas fa-sign-out-alt"></i>
           </label> 
           <input 
             type="date" 
@@ -48,10 +48,10 @@ const Filters = (props) => {
           ></input>
         </div>
         <div className="filters__selects">
-          <label for="" className="filters__icon">
-            <i class="fas fa-globe"></i>
+          <label htmlFor="country" className="filters__icon">
+            <i className="fas fa-globe"></i>
           </label>
-          <select onChange={onCountryChange}>
+          <select id="country" onChange={onCountryChange}>
             <option value="">Todos los países</option>
             {
               listCountries.map((el, index) => <option key={`${index}-${el.slice(0,3).toLowerCase()}`} value={el}>{el}</option>)
@@ -59,10 +59,10 @@ const Filters = (props) => {
           </select>
         </div>
         <div className="filters__selects">
-          <label for="" className="filters__icon">
-            <i class="fas fa-dollar-sign"></i>
+          <label htmlFor="price" className="filters__icon">
+            <i className="fas fa-dollar-sign"></i>
           </label>
-          <select onChange={onPriceChange}>
+          <select id="price" onChange={onPriceChange}>
             <option value="">Cualquier precio</option>
             <option value="1">$</option>
             <option value="2">$$</option>
@@ -71,10 +71,10 @@ const Filters = (props) => {
           </select>
         </div>
         <div className="filters__selects">
-          <label for="" className="filters__icon">
-            <i class="fas fa-bed"></i>
+          <label htmlFor="size" className="filters__icon">
+            <i className="fas fa-bed"></i>
           </label>
-          <select onChange={onSizeChange}>
+          <select id="size" onChange={onSizeChange}>
             <option value="">Cualquier tamaño</option>
             <option value="small">Hotel pequeño</option>
             <option value="medium">Hotel mediano</option>
