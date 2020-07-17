@@ -33,6 +33,7 @@ const Filters = (props) => {
             name="start" 
             min={dateStringify(todayDate)} 
             onChange={onDateChange}
+            aria-label="Elige la fecha para hacer el check-in"
           ></input>
         </div>
         <div className="filters__checkout">
@@ -45,13 +46,14 @@ const Filters = (props) => {
             name="end" 
             min={activeCheckIn ? limitCheckOutDate.toISOString().slice(0,10) : dateStringify(todayDate)} 
             onChange={onDateChange}
+            aria-label="Elige la fecha para hacer el check-out"
           ></input>
         </div>
         <div className="filters__selects">
           <label htmlFor="country" className="filters__icon">
             <i className="fas fa-globe"></i>
           </label>
-          <select id="country" onChange={onCountryChange}>
+          <select id="country" onChange={onCountryChange} aria-label="Elige el país">
             <option value="">Todos los países</option>
             {
               listCountries.map((el, index) => <option key={`${index}-${el.slice(0,3).toLowerCase()}`} value={el}>{el}</option>)
@@ -62,7 +64,7 @@ const Filters = (props) => {
           <label htmlFor="price" className="filters__icon">
             <i className="fas fa-dollar-sign"></i>
           </label>
-          <select id="price" onChange={onPriceChange}>
+          <select id="price" onChange={onPriceChange} aria-label="Elige el precio del hotel">
             <option value="">Cualquier precio</option>
             <option value="1">$</option>
             <option value="2">$$</option>
@@ -74,7 +76,7 @@ const Filters = (props) => {
           <label htmlFor="size" className="filters__icon">
             <i className="fas fa-bed"></i>
           </label>
-          <select id="size" onChange={onSizeChange}>
+          <select id="size" onChange={onSizeChange} aria-label="Elige el tamaño del hotel">
             <option value="">Cualquier tamaño</option>
             <option value="small">Hotel pequeño</option>
             <option value="medium">Hotel mediano</option>
